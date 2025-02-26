@@ -2,8 +2,10 @@ package org.example.expert.domain.auth.controller;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.example.expert.domain.auth.dto.request.RefreshTokenRequest;
 import org.example.expert.domain.auth.dto.request.SigninRequest;
 import org.example.expert.domain.auth.dto.request.SignupRequest;
+import org.example.expert.domain.auth.dto.response.RefreshTokenResponse;
 import org.example.expert.domain.auth.dto.response.SigninResponse;
 import org.example.expert.domain.auth.dto.response.SignupResponse;
 import org.example.expert.domain.auth.service.AuthService;
@@ -26,4 +28,12 @@ public class AuthController {
     public SigninResponse signin(@Valid @RequestBody SigninRequest signinRequest) {
         return authService.signin(signinRequest);
     }
+
+    @PostMapping("/auth/refresh")
+    public RefreshTokenResponse refresh(
+            @RequestBody RefreshTokenRequest refreshTokenRequest
+    ) {
+       return authService.refresh(refreshTokenRequest);
+    }
+
 }

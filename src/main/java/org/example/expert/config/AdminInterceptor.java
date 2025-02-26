@@ -43,7 +43,7 @@ public class AdminInterceptor implements HandlerInterceptor {
     }
 
     private boolean checkAdminAuthroity(HttpServletRequest request) {
-        //TODO 세션이나 토큰을 통해 어드민 권한을 확인해야 함.
+
         try {
             String authHeader = request.getHeader("Authorization");
             if (authHeader != null && authHeader.startsWith("Bearer ")) {

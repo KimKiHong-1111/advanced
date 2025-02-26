@@ -12,6 +12,7 @@ public class CommentAdminController {
 
     private final CommentAdminService commentAdminService;
 
+    //TODO Interceptor 활용
     @DeleteMapping("/admin/comments/{commentId}")
     public void deleteComment(@PathVariable long commentId) {
         commentAdminService.deleteComment(commentId);

@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: spring-advanced
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/advanced
+    username: root
+    password: ${PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQLDialect
+
+jwt:
+  secret:
+    key: ${jwt.secret.key}
